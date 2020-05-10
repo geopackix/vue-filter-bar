@@ -1,0 +1,32 @@
+{
+  "name": "vue-filter-bar",
+  "version": "1.0.0",
+  "description": "This vue.js component provides a configurable filter bar for url-based API actions",
+  "main": "example.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geopackix/vue-filter-bar.git"
+  },
+  "keywords": [
+    "vuejs",
+    "component",
+    "filter",
+    "bar",
+    "api",
+    "query",
+    "configurable",
+    "default"
+  ],
+  "author": "geopackix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geopackix/vue-filter-bar/issues"
+  },
+  "homepage": "https://github.com/geopackix/vue-filter-bar#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
