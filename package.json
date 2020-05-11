@@ -4,7 +4,8 @@
   "description": "This vue.js component provides a configurable filter bar for url-based API actions",
   "main": "example.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build": "grunt"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,13 @@
   "homepage": "https://github.com/geopackix/vue-filter-bar#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-preset-minify": "^0.5.1",
+    "grunt-babel": "^8.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-version": "^2.0.0"
   }
 }
