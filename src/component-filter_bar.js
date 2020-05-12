@@ -162,8 +162,8 @@ var visitorModal = Vue.component('vi-filter-bar', {
     `
     <div class="vi-filter-bar">
         <div class="collapse-toggle">
-            <button v-if="!collapsed" type="button" class="btn" v-on:click="toggleCoppapse()"><img class="clickable" src="src/assets/collapse-close.png" width="15" height="15"></button>
-            <button v-if="collapsed" type="button" class="btn" v-on:click="toggleCoppapse()"><img class="clickable" src="src/assets/collapse-open.png" width="15" height="15"></button>
+            <button v-if="!collapsed" type="button" class="btn" v-on:click="toggleCoppapse()"><img class="clickable" src="./assets/collapse-close.png" width="15" height="15"></button>
+            <button v-if="collapsed" type="button" class="btn" v-on:click="toggleCoppapse()"><img class="clickable" src="./assets/collapse-open.png" width="15" height="15"></button>
         </div>    
         
         <h5>Filter options</h5>
@@ -176,12 +176,12 @@ var visitorModal = Vue.component('vi-filter-bar', {
                 <td class="left"></td>
                 <td>
                     <div v-if="true">
-                        <button type="button" class="btn" v-on:click="addFilter()"><img class="clickable" src='src/assets/add.png' width="20" height="20"> ({{numberOfAvailableProperties}})</button>
+                        <button type="button" class="btn" v-on:click="addFilter()"><img class="clickable" src='./assets/add.png' width="20" height="20"> ({{numberOfAvailableProperties}})</button>
                     </div>
                     
                 </td>
                 <td>
-                    <button type="button" class="btn" v-on:click="triggerCallback()"><img class="clickable" src='src/assets/reload.png' width="20" height="20"></button>
+                    <button type="button" class="btn" v-on:click="triggerCallback()"><img class="clickable" src='./assets/reload.png' width="20" height="20"></button>
                 </td>
             </tr>
             

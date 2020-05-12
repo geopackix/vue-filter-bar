@@ -97,7 +97,7 @@ var visitorModal = Vue.component('vi-filter', {
                     </div>
                 </td>
                 <td v-if="!filter.filterRequired">
-                    <img class="clickable" src='src/assets/delete.png' width="15" height="15" v-on:click="deleteFilter()">
+                    <img class="clickable" src='./assets/delete.png' width="15" height="15" v-on:click="deleteFilter()">
                 </td>
             </tr>
         </table>
