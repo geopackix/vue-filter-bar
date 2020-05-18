@@ -82,6 +82,7 @@ var visitorModal = Vue.component('vi-filter', {
                             {{filter.filterPropertyLabel}}
                         </button>
                         <div class="dropdown-menu" >
+                            
                             <a class="dropdown-item clickable" v-for="prop in availableProperties" v-on:click="setFilterProperty(prop)">{{prop}}</a>
                         </div>
                     </div>
@@ -92,7 +93,28 @@ var visitorModal = Vue.component('vi-filter', {
                             {{filter.filterValueLabel}}
                         </button>
                         <div class="dropdown-menu">
+                            <h6 class="dropdown-header">{{filter.filterProperty}}</h6>
                             <a class="dropdown-item clickable" v-for="value in getValues(filter.filterPropertyLabel)" v-on:click="setFilterValue(value.filterValue, value.label)">{{value.label}}</a>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label">
+                                        Multiselect option 1
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label">
+                                        Multiselect option 2
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+
+
                         </div>
                     </div>
                 </td>
