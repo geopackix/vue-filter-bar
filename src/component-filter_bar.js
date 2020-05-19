@@ -19,6 +19,7 @@ var visitorModal = Vue.component('vi-filter-bar', {
                 filterValue: null,
                 filterValueLabel: null,
                 filterRequired: false,
+                selectionMode: 'single',
                 getFilterFunction: vm.getFilter,
                 getAvailableFilterProperties: vm.getAvailableFilterProperties
             });
@@ -36,6 +37,7 @@ var visitorModal = Vue.component('vi-filter-bar', {
                 filterValue: filter.values[0].filterValue,
                 filterValueLabel: filter.values[0].label,
                 filterRequired: true,
+                selectionMode: filter.selectionMode || 'single',
                 getFilterFunction: vm.getFilter,
                 getAvailableFilterProperties: ()=>{return false}
             });
@@ -104,7 +106,6 @@ var visitorModal = Vue.component('vi-filter-bar', {
 
         //Returns the filter object from the _availableFilters property
         getFilter(propertyLabel){
-            
             if(propertyLabel != null){
                 let vm = this;
                 for(property of vm._availableFilters){

@@ -84,3 +84,14 @@
     font-size: 0.75em;
     background-color: #ffffff
 }
+
+.vi-filter-bar .form-group {
+    
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+.vi-filter-bar .form-check {
+    padding: 4px;
+    
+}

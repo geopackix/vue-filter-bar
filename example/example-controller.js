@@ -8,7 +8,7 @@ var app = new Vue({
               label: 'Filter property 1',                            //This becomes visible to the user
               filterProperty: 'statuscodefilter',
               required: true,
-              selectionmode: 'single',
+              selectionMode: 'single',
               values: [
                   {
                       label:'Filter value 1 (default)',
@@ -28,7 +28,7 @@ var app = new Vue({
           {
               label: 'Length',                            
               filterProperty: 'length',
-              selectionmode: 'single',
+              selectionMode: 'single',
               values: [
                   {
                       label:'Length=18 (default)',
@@ -45,7 +45,7 @@ var app = new Vue({
           {
             label: 'Algorithm',                            
             filterProperty: 'algorithm',
-            selectionmode: 'single',
+            selectionMode: 'multiple',
             values: [
                 {
                     label:'List',
