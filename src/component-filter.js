@@ -11,16 +11,7 @@ var visitorModal = Vue.component('vi-filter', {
             let vm = this;
             vm.availableProperties = vm.filter.getAvailableFilterProperties();
         },
-        getValues(propertyLabel){
-            let vm = this;
-
-            if(propertyLabel != null){
-                let filter = vm.filter.getFilterFunction(propertyLabel);
-                return filter.values;
-            }else{
-                return []
-            } 
-        },
+        
         setFilterProperty(propertyLabel){
             let vm = this;
             //overrides filter Value
@@ -41,19 +32,7 @@ var visitorModal = Vue.component('vi-filter', {
 
             vm.requestAvailableProperties();
 
-            /**
-            if(previousLabel != null){
-                let previousfilter = vm.getFilterFromParent(previousLabel);
-                previousfilter.status = 1;
-            }
             
-            filter.status = 0; //mark property as in use.
-            */
-        },
-        setFilterValue(Value, Label){
-            let vm = this;
-            vm.filter.filterValue = Value;
-            vm.filter.filterValueLabel = Label;
         },
 
         checkboxClick(Value, Label){
@@ -97,11 +76,7 @@ var visitorModal = Vue.component('vi-filter', {
 
             if(vm.filter.filterValue.substring(0,1) == ','){
                 vm.filter.filterValue = vm.filter.filterValue.substring(1);
-            }
-
-
-
-            
+            } 
         },
 
         deleteFilter(){
@@ -121,7 +96,7 @@ var visitorModal = Vue.component('vi-filter', {
         let vm = this;
         //vm.requestAvailableProperties();
         
-        if(vm.filter.selectionMode == 'multiple'){
+        /*if(vm.filter.selectionMode == 'multiple'){
             //handle default value fur mulitple filter
             let values = vm.getValues(vm.filter.filterPropertyLabel);
             
@@ -130,7 +105,7 @@ var visitorModal = Vue.component('vi-filter', {
                     checkboxClick(value.filterValue, value.label);
                 }
             }
-        }
+        }*/
         
 
 
@@ -153,18 +128,9 @@ var visitorModal = Vue.component('vi-filter', {
                 <td>
                     <div class="btn-group m-1" >
 
-                        <vi-single-filter v-bind="filter" v-if="filter.selectionMode == 'single'"></vi-single-filter>
+                        <vi-single-filter v-bind:filter="filter" v-if="filter.selectionMode == 'single'"></vi-single-filter>
 
-                        <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{filter.filterValueLabel}}
-                        </button>
-                        <div class="dropdown-menu" v-if="filter.selectionMode == 'single'">
-                                                  
-                            <h6 class="dropdown-header">{{filter.filterProperty}}</h6>
-                            <a class="dropdown-item clickable" v-for="value in getValues(filter.filterPropertyLabel)" v-on:click="setFilterValue(value.filterValue, value.label)">{{value.label}}</a>
-
-                        </div>
-                        <div class="dropdown-menu" v-if="filter.selectionMode == 'multiple'">
+                        <!--div class="dropdown-menu" v-if="filter.selectionMode == 'multiple'">
                             <h6 class="dropdown-header">{{filter.filterProperty}}</h6>
                             
                             <div class="form-group" >
@@ -175,7 +141,7 @@ var visitorModal = Vue.component('vi-filter', {
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
                     </div>
                 </td>
                 <td v-if="!filter.filterRequired">
