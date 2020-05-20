@@ -54,10 +54,9 @@ var visitorModal = Vue.component('vi-filter', {
             let vm = this;
             vm.filter.filterValue = Value;
             vm.filter.filterValueLabel = Label;
-            
         },
 
-        chackboxClick(Value, Label, check){
+        checkboxClick(Value, Label){
 
             let vm = this;           
             if(vm.filter.filterValue != null){
@@ -122,6 +121,19 @@ var visitorModal = Vue.component('vi-filter', {
         let vm = this;
         //vm.requestAvailableProperties();
         
+        if(vm.filter.selectionMode == 'multiple'){
+            //handle default value fur mulitple filter
+            let values = vm.getValues(vm.filter.filterPropertyLabel);
+            
+            for(value of values){
+                if(value.default){
+                    checkboxClick(value.filterValue, value.label);
+                }
+            }
+        }
+        
+
+
     },
     template: 
     `
@@ -134,17 +146,20 @@ var visitorModal = Vue.component('vi-filter', {
                             {{filter.filterPropertyLabel}}
                         </button>
                         <div class="dropdown-menu" >
-                            
                             <a class="dropdown-item clickable" v-for="prop in availableProperties" v-on:click="setFilterProperty(prop)">{{prop}}</a>
                         </div>
                     </div>
                 </td>
                 <td>
                     <div class="btn-group m-1" >
+
+                        <vi-single-filter v-bind="filter" v-if="filter.selectionMode == 'single'"></vi-single-filter>
+
                         <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{filter.filterValueLabel}}
                         </button>
                         <div class="dropdown-menu" v-if="filter.selectionMode == 'single'">
+                                                  
                             <h6 class="dropdown-header">{{filter.filterProperty}}</h6>
                             <a class="dropdown-item clickable" v-for="value in getValues(filter.filterPropertyLabel)" v-on:click="setFilterValue(value.filterValue, value.label)">{{value.label}}</a>
 
@@ -154,7 +169,7 @@ var visitorModal = Vue.component('vi-filter', {
                             
                             <div class="form-group" >
                                 <div class="form-check" v-for="value in getValues(filter.filterPropertyLabel)" >
-                                    <input class="form-check-input" type="checkbox"  v-on:click="chackboxClick(value.filterValue, value.label)" >
+                                    <input class="form-check-input" type="checkbox"  v-on:click="checkboxClick(value.filterValue, value.label)" >
                                     <label class="form-check-label">
                                         {{value.label}}
                                     </label>
