@@ -43,12 +43,12 @@ var app = new Vue({
               ]
           },
           {
-              label: 'Search',
+              label: 'Search String',
               filterProperty: 'q',
               selectionMode: 'search'
           },
           {
-            label: 'Date',
+            label: 'Start date',
             filterProperty: 'startdate',
             selectionMode: 'date'
           },

@@ -38,11 +38,12 @@ var visitorModal = Vue.component('vi-single-filter', {
     template: 
     `
     <div class="vi-single-filter">
-        <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{filter.filterValueLabel}}
         </button>
 
-        <div class="dropdown-menu" >      
+
+        <div class="dropdown-menu">      
             <h6 class="dropdown-header">{{filter.filterProperty}}</h6>
             <a class="dropdown-item clickable" v-for="value in getValues(filter.filterPropertyLabel)" v-on:click="setFilterValue(value.filterValue, value.label)">{{value.label}}</a>
         </div>

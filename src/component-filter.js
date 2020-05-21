@@ -69,7 +69,7 @@ var visitorModal = Vue.component('vi-filter', {
         <table>
             <tr>
                 <td class="left">
-                    <div class="btn-group m-1">
+                    <div class="btn-group">
                         <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-on:click="requestAvailableProperties()">
                             {{filter.filterPropertyLabel}}
                         </button>
@@ -79,7 +79,7 @@ var visitorModal = Vue.component('vi-filter', {
                     </div>
                 </td>
                 <td>
-                    <div class="btn-group m-1" >
+                    <div class="btn-group vi-filter-value" >
 
                         <vi-single-filter v-bind:filter="filter" v-if="filter.selectionMode == 'single'"></vi-single-filter>
 
@@ -92,11 +92,10 @@ var visitorModal = Vue.component('vi-filter', {
                     </div>
                 </td>
                 <td v-if="!filter.filterRequired">
-                    <img class="clickable" src='./assets/delete.png' width="15" height="15" v-on:click="deleteFilter()">
+                    <img class="clickable" src='./assets/delete.png' width="12" height="12" v-on:click="deleteFilter()">
                 </td>
             </tr>
         </table>
-
     </div> 
     `
 

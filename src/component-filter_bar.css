@@ -1,9 +1,4 @@
-.vi-filter {
-    padding-right:0.2em;
-}
-
 .vi-filter-bar {
-
     position: relative;
 
     margin-top:1em;
@@ -17,8 +12,46 @@
     background-color: rgb(241, 241, 241);
 }
 
-.vi-filter table{
-    width:100%; 
+.vi-filter-bar .vi-filter-btn{
+    background-color: rgb(226, 226, 226);
+    padding: 0.1em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+
+    border-color: rgb(190, 190, 190);
+
+
+}
+.vi-filter-bar table{
+    border-spacing: 0px;
+}
+.vi-filter-bar .collapse-toggle{
+    position: absolute;
+    right: 8px;
+    top: 6px;
+}
+.vi-filter-bar .collapse-toggle button{
+    font-size: 12;
+    background-color: #ffffff
+}
+
+.vi-filter-bar td{
+    padding: 0px;
+    padding-right: 0.3em;
+}
+
+.vi-filter-bar .mono{
+    font-family: robotomono;
+    font-size: 12px;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    font-family: consolas;
+}
+
+.vi-filter {
+    padding-right:0.2em;
+    
+
     border-collapse: separate;
     border: solid;
     border-width:1px;
@@ -29,14 +62,16 @@
     border-color: rgb(199, 199, 199);
 
     background-color: rgb(255, 255, 255);
-
 }
-.vi-filter-bar button{
-    background-color: rgb(210, 210, 210);
-    padding: 0.1em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
 
+.vi-filter button, .dropdown-item, .form-check-input{
+    font-size:14px;
+    cursor: pointer;
+    padding: 0px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    background-color: rgb(255, 255, 255);
+    border: 0;
 }
 
 .vi-filter tr{
@@ -55,43 +90,33 @@
     border-right-color: #d3d3d3 ;
 }
 
-.vi-filter-bar td{
-    padding: 0px;
-    padding-right: 0.3em;
-}
-
-.vi-filter-bar .mono{
-    font-family: robotomono;
-    font-size: 0.8em;
-    margin-block-start: 0.2em;
-    margin-block-end: 0.2em;
-    font-family: consolas;
-}
-
-.vi-filter button{
-    padding: 0px;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    background-color: rgb(236, 236, 236);
-}
-
-.vi-filter-bar .collapse-toggle{
-    position: absolute;
-    right: 8px;
-    top: 6px;
-}
-.vi-filter-bar .collapse-toggle button{
-    font-size: 0.75em;
-    background-color: #ffffff
-}
-
-.vi-filter-bar .form-group {
+.vi-filter .vi-multi-filter .form-group {
     
     padding-left: 36px;
-    padding-right: 36px;
-}
-
-.vi-filter-bar .form-check {
-    padding: 4px;
     
 }
+
+.vi-filter .form-check {
+    padding: 4px;
+}
+
+.vi-filter .vi-search-filter input, .form-group {
+    padding:0;
+    margin:0;
+    height: auto;
+
+}
+
+.vi-filter .vi-date-filter input{
+    height: auto;
+    padding: 0px;
+}
+
+
+
+
+.vi-filter .vi-filter-value{
+    display: block;
+}
+
+

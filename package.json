@@ -29,8 +29,7 @@
   "homepage": "https://github.com/geopackix/vue-filter-bar#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "vue2-datepicker": "^3.5.0",
-    "vuejs-datepicker": "^1.6.2"
+    "vue2-datepicker": "^3.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

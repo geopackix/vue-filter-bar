@@ -34,10 +34,9 @@ var visitorModal = Vue.component('vi-search-filter', {
     template: 
     `
     <div class="vi-search-filter">
-        
-        <label for="exampleInputEmail1">{{filter.filterValueLabel}}</label>
-        <input type="text" class="form-control-sm" id="exampleInputEmail1" v-model="searchString" aria-describedby="search" >
-        
+        <div class="form-group">
+            <input class="form-control form-control-sm" type="text" v-model="searchString"  >
+        </div>
     </div> 
     `
 

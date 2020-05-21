@@ -195,12 +195,12 @@ var visitorModal = Vue.component('vi-filter-bar', {
                 <td class="left"></td>
                 <td>
                     <div v-if="true">
-                        <button type="button" class="btn" v-on:click="addFilter()"><img class="clickable" src='./assets/add.png' width="20" height="20"> ({{numberOfAvailableProperties}})</button>
+                        <button type="button " class="btn vi-filter-btn" v-on:click="addFilter()"><img class="clickable" src='./assets/add.png' width="15" height="15"> ({{numberOfAvailableProperties}})</button>
                     </div>
                     
                 </td>
                 <td>
-                    <button type="button" class="btn" v-on:click="triggerCallback()"><img class="clickable" src='./assets/reload.png' width="20" height="20"></button>
+                    <button type="button" class="btn vi-filter-btn" v-on:click="triggerCallback()"><img class="clickable" src='./assets/reload.png' width="15" height="15"></button>
                 </td>
             </tr>            
             
