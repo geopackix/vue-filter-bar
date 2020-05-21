@@ -6,6 +6,7 @@ const port = 3001
 //make 'example' folder available.
 app.use('/', express.static(__dirname + '/example'));
 app.use('/src', express.static(__dirname + '/src'));
+app.use('/datepicker', express.static(__dirname + '/node_modules/vue2-datepicker'));
 app.use('/assets', express.static(__dirname + '/src/assets'));
 
 app.listen(port, function () {

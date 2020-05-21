@@ -48,6 +48,11 @@ var app = new Vue({
               selectionMode: 'search'
           },
           {
+            label: 'Date',
+            filterProperty: 'startdate',
+            selectionMode: 'date'
+          },
+          {
             label: 'Classes',                            
             filterProperty: 'classes',
             selectionMode: 'multiple',
@@ -84,8 +89,8 @@ var app = new Vue({
 
     console.log('vue instance has been created.');
 
-
-
-
-  }
+  },
+  components: {
+    //vuejsDatepicker
+  }  
 })
