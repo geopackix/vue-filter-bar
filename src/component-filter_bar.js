@@ -20,6 +20,7 @@ var visitorModal = Vue.component('vi-filter-bar', {
                 filterValueLabel: null,
                 filterRequired: false,
                 selectionMode: 'single',
+                delimiter: ',',
                 getFilterFunction: vm.getFilter,
                 getAvailableFilterProperties: vm.getAvailableFilterProperties
             });
@@ -34,11 +35,10 @@ var visitorModal = Vue.component('vi-filter-bar', {
                 _availableFilters: vm._availableFilters,
                 filterProperty: filter.filterProperty,
                 filterPropertyLabel: filter.label,
-                //filterValue: filter.values[0].filterValue,
-                //filterValueLabel: filter.values[0].label,
-                filterValue: vm.getDefaultValue(filter.label).filterValue,
-                filterValueLabel: vm.getDefaultValue(filter.label).label,
+                filterValue: vm.getDefaultValue(filter.label).filterValue || null,
+                filterValueLabel: vm.getDefaultValue(filter.label).label || null,
                 filterRequired: true,
+                delimiter: filter.delimiter || ',',
                 selectionMode: filter.selectionMode || 'single',
                 getFilterFunction: vm.getFilter,
                 getAvailableFilterProperties: ()=>{return false}
@@ -49,16 +49,18 @@ var visitorModal = Vue.component('vi-filter-bar', {
         getDefaultValue(propertyLabel){
             
             let filter = this.getFilter(propertyLabel);
-            console.log(filter);
 
-            //Search for default value
-            for(value of filter.values){
-                if(value.default){
-                    return value
+            if(filter.selectionMode == 'single'){
+                //Search for default value
+                for(value of filter.values){
+                    if(value.default){
+                        return value
+                    }
                 }
+                //If no default value was found, the first element would be taken as a default.
+                return filter.values[0];
             }
-            //If no default value was found, the first element would be taken as a default.
-            return filter.values[0];
+            return false;
         },
         //Delete an Filter from the filters array
         deleteFilter(filterProperty){

@@ -5,22 +5,22 @@ var app = new Vue({
       uri: '',
       filters:[
           {
-              label: 'Filter property 1',                            //This becomes visible to the user
-              filterProperty: 'statuscodefilter',
+              label: 'Example property',                            //This becomes visible to the user
+              filterProperty: 'filter',
               required: true,
               selectionMode: 'single',
               values: [
                   {
-                      label:'Filter value 1 (default)',
+                      label:'Filter value "200"',
                       filterValue: '200'
                   },{
-                      label:'Filter value 2',
+                      label:'Filter value "300" (default)',
                       filterValue: '300'
                   },{
-                      label:'Filter value 3',
+                      label:'Filter value "400"',
                       filterValue: '400'
                   },{
-                      label:'Filter value 4',
+                      label:'Filter value "500"',
                       filterValue: '500'
                   },
               ]
@@ -43,19 +43,25 @@ var app = new Vue({
               ]
           },
           {
-            label: 'Algorithm',                            
-            filterProperty: 'algorithm',
+            label: 'Classes',                            
+            filterProperty: 'classes',
             selectionMode: 'multiple',
+            //delimiter: '/',
             values: [
                 {
-                    label:'List',
-                    filterValue: 'L'
+                    label:'Class A',
+                    filterValue: 'a',
+                    default: true
                 },{
-                    label:'Tree',
-                    filterValue: 'T'
+                    label:'Class B',
+                    filterValue: 'b',
+                    default: true
                 },{
-                    label:'Graph',
-                    filterValue: 'G'
+                    label:'Class C',
+                    filterValue: 'c',
+                },{
+                    label:'Class D',
+                    filterValue: 'd',
                 }
             ]
         }
