@@ -43,6 +43,11 @@ var app = new Vue({
               ]
           },
           {
+              label: 'Search',
+              filterProperty: 'q',
+              selectionMode: 'search'
+          },
+          {
             label: 'Classes',                            
             filterProperty: 'classes',
             selectionMode: 'multiple',

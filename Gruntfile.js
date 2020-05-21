@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     },
     "concat": {
       bar: {
-        src: ['src/*.js'],
+        src: ['src/*.js', 'src/filterTypes/*.js'],
         dest: 'dist/short.js',
       },
     },

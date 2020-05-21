@@ -202,11 +202,11 @@ var visitorModal = Vue.component('vi-filter-bar', {
                 <td>
                     <button type="button" class="btn" v-on:click="triggerCallback()"><img class="clickable" src='./assets/reload.png' width="20" height="20"></button>
                 </td>
-            </tr>
+            </tr>            
             
-            <p class="mono">{{uri}}</p>
                 
         </table>
+        <p class="mono">{{uri}}</p>
     </div> 
     `
 

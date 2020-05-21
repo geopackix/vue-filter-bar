@@ -84,6 +84,8 @@ var visitorModal = Vue.component('vi-filter', {
                         <vi-single-filter v-bind:filter="filter" v-if="filter.selectionMode == 'single'"></vi-single-filter>
 
                         <vi-multi-filter v-bind:filter="filter" v-if="filter.selectionMode == 'multiple'"></vi-multi-filter>
+
+                        <vi-search-filter v-bind:filter="filter" v-if="filter.selectionMode == 'search'"></vi-search-filter>
                         
                     </div>
                 </td>
