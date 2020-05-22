@@ -190,14 +190,15 @@ var visitorModal = Vue.component('vi-filter-bar', {
         <table v-if="!collapsed">
             <tr>
                 <td v-for="filter in filters">
+                    
                     <vi-filter v-bind:filter="filter" v-on:filter-delete="deleteFilter($event)" v-on:filter-property-selected="filerPropertyInUse($event)"></vi-filter>
+                    
                 </td>
                 <td class="left"></td>
                 <td>
                     <div v-if="true">
-                        <button type="button " class="btn vi-filter-btn" v-on:click="addFilter()"><img class="clickable" src='./assets/add.png' width="15" height="15"> ({{numberOfAvailableProperties}})</button>
+                        <button type="button " class="btn vi-filter-btn" v-on:click="addFilter()">Add ({{numberOfAvailableProperties}})</button>
                     </div>
-                    
                 </td>
                 <td>
                     <button type="button" class="btn vi-filter-btn" v-on:click="triggerCallback()"><img class="clickable" src='./assets/reload.png' width="15" height="15"></button>

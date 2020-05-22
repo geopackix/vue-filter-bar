@@ -7,15 +7,16 @@ var app = new Vue({
           {
               label: 'Example property',                            //This becomes visible to the user
               filterProperty: 'filter',
-              required: true,
               selectionMode: 'single',
+              required: true,
               values: [
                   {
                       label:'Filter value "200"',
                       filterValue: '200'
                   },{
                       label:'Filter value "300" (default)',
-                      filterValue: '300'
+                      filterValue: '300',
+                      default: true
                   },{
                       label:'Filter value "400"',
                       filterValue: '400'
@@ -56,22 +57,20 @@ var app = new Vue({
             label: 'Classes',                            
             filterProperty: 'classes',
             selectionMode: 'multiple',
-            //delimiter: '/',
+            delimiter: '/',
             values: [
                 {
                     label:'Class A',
-                    filterValue: 'a',
-                    default: true
+                    filterValue: 'a'
                 },{
                     label:'Class B',
-                    filterValue: 'b',
-                    default: true
+                    filterValue: 'b'
                 },{
                     label:'Class C',
-                    filterValue: 'c',
+                    filterValue: 'c'
                 },{
                     label:'Class D',
-                    filterValue: 'd',
+                    filterValue: 'd'
                 }
             ]
         }

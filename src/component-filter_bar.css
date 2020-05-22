@@ -9,18 +9,17 @@
     padding-top: 0.3em;
     padding-bottom: 0.3em;
 
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(250, 250, 250);
 }
 
 .vi-filter-bar .vi-filter-btn{
     background-color: rgb(226, 226, 226);
-    padding: 0.1em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
+    font-size:16px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
 
-    border-color: rgb(190, 190, 190);
-
-
+    margin:auto;
 }
 .vi-filter-bar table{
     border-spacing: 0px;
@@ -43,35 +42,43 @@
 .vi-filter-bar .mono{
     font-family: robotomono;
     font-size: 12px;
-    margin-block-start: 0.2em;
+    margin-block-start: 1em;
     margin-block-end: 0.2em;
     font-family: consolas;
 }
 
 .vi-filter {
     padding-right:0.2em;
-    
 
     border-collapse: separate;
     border: solid;
     border-width:1px;
-    border-top-left-radius:      8px 8px;
-    border-top-right-radius:    8px 8px;
-    border-bottom-right-radius: 8px 8px;
-    border-bottom-left-radius:  8px 8px;
+    border-top-left-radius:      12px 12px;
+    border-top-right-radius:    12px 12px;
+    border-bottom-right-radius: 12px 12px;
+    border-bottom-left-radius:  12px 12px;
     border-color: rgb(199, 199, 199);
 
     background-color: rgb(255, 255, 255);
+
+    
 }
 
 .vi-filter button, .dropdown-item, .form-check-input{
-    font-size:14px;
+    font-size:16px;
     cursor: pointer;
-    padding: 0px;
-    padding-left: 0.5em;
+    padding: 4px;
+    padding-left: 1em;
     padding-right: 0.5em;
-    background-color: rgb(255, 255, 255);
     border: 0;
+}
+
+.vi-filter .vi-filter-delete-btn{
+    cursor: pointer;
+    margin:auto;
+    margin-left: 1em;
+    margin-right: 0.5em;
+    vertical-align: baseline;
 }
 
 .vi-filter tr{
@@ -91,7 +98,6 @@
 }
 
 .vi-filter .vi-multi-filter .form-group {
-    
     padding-left: 36px;
     
 }
@@ -101,22 +107,29 @@
 }
 
 .vi-filter .vi-search-filter input, .form-group {
-    padding:0;
-    margin:0;
-    height: auto;
-
+    padding:0px;
+    margin:0px;
+    border: none;
+    margin-left:0.4em;
 }
 
 .vi-filter .vi-date-filter input{
-    height: auto;
+    border: none;
     padding: 0px;
+    font-size:16px;
+    margin-left:0.4em;
 }
-
-
-
 
 .vi-filter .vi-filter-value{
     display: block;
+}
+
+.vi-filter-bar .btn:focus {
+    box-shadow: none;
+}
+
+.vi-filter-bar input:focus {
+    box-shadow: none;
 }
 
 

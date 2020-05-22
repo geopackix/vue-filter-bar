@@ -190,17 +190,18 @@ var visitorModal = Vue.component('vi-filter-bar', {
         <table v-if="!collapsed">
             <tr>
                 <td v-for="filter in filters">
+                    
                     <vi-filter v-bind:filter="filter" v-on:filter-delete="deleteFilter($event)" v-on:filter-property-selected="filerPropertyInUse($event)"></vi-filter>
+                    
                 </td>
                 <td class="left"></td>
                 <td>
                     <div v-if="true">
-                        <button type="button" class="btn" v-on:click="addFilter()"><img class="clickable" src='./assets/add.png' width="20" height="20"> ({{numberOfAvailableProperties}})</button>
+                        <button type="button " class="btn vi-filter-btn" v-on:click="addFilter()">Add ({{numberOfAvailableProperties}})</button>
                     </div>
-                    
                 </td>
                 <td>
-                    <button type="button" class="btn" v-on:click="triggerCallback()"><img class="clickable" src='./assets/reload.png' width="20" height="20"></button>
+                    <button type="button" class="btn vi-filter-btn" v-on:click="triggerCallback()"><img class="clickable" src='./assets/reload.png' width="15" height="15"></button>
                 </td>
             </tr>            
             
@@ -278,11 +279,11 @@ var visitorModal = Vue.component('vi-filter', {
     },
     template: 
     `
-    <div class="vi-filter">
+    <div class="vi-filter shadow-sm">
         <table>
             <tr>
                 <td class="left">
-                    <div class="btn-group m-1">
+                    <div class="btn-group">
                         <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-on:click="requestAvailableProperties()">
                             {{filter.filterPropertyLabel}}
                         </button>
@@ -292,22 +293,55 @@ var visitorModal = Vue.component('vi-filter', {
                     </div>
                 </td>
                 <td>
-                    <div class="btn-group m-1" >
+                    <div class="btn-group vi-filter-value" >
 
                         <vi-single-filter v-bind:filter="filter" v-if="filter.selectionMode == 'single'"></vi-single-filter>
 
                         <vi-multi-filter v-bind:filter="filter" v-if="filter.selectionMode == 'multiple'"></vi-multi-filter>
 
                         <vi-search-filter v-bind:filter="filter" v-if="filter.selectionMode == 'search'"></vi-search-filter>
+
+                        <vi-date-filter v-bind:filter="filter" v-if="filter.selectionMode == 'date'"></vi-date-filter>
                         
                     </div>
                 </td>
                 <td v-if="!filter.filterRequired">
-                    <img class="clickable" src='./assets/delete.png' width="15" height="15" v-on:click="deleteFilter()">
+                    <img class="clickable vi-filter-delete-btn" src='./assets/delete.png' width="12" height="12" v-on:click="deleteFilter()">
                 </td>
             </tr>
         </table>
+    </div> 
+    `
 
+})
+var visitorModal = Vue.component('vi-date-filter', {
+    props: ['filter'],
+    data: ()=>{
+        return {
+            date: null
+        }
+    },
+    methods: {
+        
+    },
+    watch: { 
+        date: function(newVal, oldVal) { 
+            let vm = this;
+            vm.filter.filterValue = newVal.valueOf();
+            
+        }
+    },
+    computed: {   
+    },
+    mounted: async function(){
+        let vm = this;
+        
+        
+    },
+    template: 
+    `
+    <div class="vi-date-filter">
+        <date-picker v-model=date type="datetime"></date-picker>
     </div> 
     `
 
@@ -497,11 +531,10 @@ var visitorModal = Vue.component('vi-search-filter', {
     },
     template: 
     `
-    <div class="vi-single-filter">
-        
-        <label for="exampleInputEmail1">{{filter.filterValueLabel}}</label>
-        <input type="text" class="form-control-sm" id="exampleInputEmail1" v-model="searchString" aria-describedby="search" >
-        
+    <div class="vi-search-filter">
+        <div class="form-group">
+            <input class="form-control form-control-sm" type="text" v-model="searchString"  >
+        </div>
     </div> 
     `
 
@@ -546,11 +579,12 @@ var visitorModal = Vue.component('vi-single-filter', {
     template: 
     `
     <div class="vi-single-filter">
-        <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{filter.filterValueLabel}}
         </button>
 
-        <div class="dropdown-menu" >      
+
+        <div class="dropdown-menu">      
             <h6 class="dropdown-header">{{filter.filterProperty}}</h6>
             <a class="dropdown-item clickable" v-for="value in getValues(filter.filterPropertyLabel)" v-on:click="setFilterValue(value.filterValue, value.label)">{{value.label}}</a>
         </div>

@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       dist: {
         files: [
           {
-            src: 'dist/short.js', 
+            src: 'dist/vi-filter-bar.js', 
             dest: 'dist/vi-filter-bar.min.js',   
           },
         ]
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     "concat": {
       bar: {
         src: ['src/*.js', 'src/filterTypes/*.js'],
-        dest: 'dist/short.js',
+        dest: 'dist/vi-filter-bar.js',
       },
     },
     'copy':{

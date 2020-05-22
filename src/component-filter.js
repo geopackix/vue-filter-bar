@@ -65,7 +65,7 @@ var visitorModal = Vue.component('vi-filter', {
     },
     template: 
     `
-    <div class="vi-filter">
+    <div class="vi-filter shadow-sm">
         <table>
             <tr>
                 <td class="left">
@@ -92,7 +92,7 @@ var visitorModal = Vue.component('vi-filter', {
                     </div>
                 </td>
                 <td v-if="!filter.filterRequired">
-                    <img class="clickable" src='./assets/delete.png' width="12" height="12" v-on:click="deleteFilter()">
+                    <img class="clickable vi-filter-delete-btn" src='./assets/delete.png' width="12" height="12" v-on:click="deleteFilter()">
                 </td>
             </tr>
         </table>
