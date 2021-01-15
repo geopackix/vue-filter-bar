@@ -1,0 +1,117 @@
+.vi-filter {
+  padding-right:0.2em;
+  height: 32px;
+  font-size:12px;
+}
+
+
+.vi-filter .vi-filter-value{
+  margin: auto;
+}
+
+
+.vi-filter-bar {
+
+  position: relative;
+
+  margin-top:1em;
+  margin-bottom:1em;
+
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+
+  background-color: rgb(241, 241, 241);
+}
+
+.vi-filter table{
+  width:100%; 
+  height:100%;
+  border-collapse: separate;
+  border: solid;
+  border-width:1px;
+  border-top-left-radius:      8px 8px;
+  border-top-right-radius:    8px 8px;
+  border-bottom-right-radius: 8px 8px;
+  border-bottom-left-radius:  8px 8px;
+  border-color: rgb(199, 199, 199);
+
+  background-color: rgb(255, 255, 255);
+
+}
+.vi-filter-bar button{
+  background-color: rgb(210, 210, 210);
+  padding: 0.1em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+
+}
+
+.vi-filter tr{
+  background-color: inherit;
+}
+
+.vi-filter td{
+  border-top: 0px;
+  padding: 0px;
+  text-align: center;  
+}
+
+.vi-filter .left{
+  border-right: solid;
+  border-right-width: 2px;
+  border-right-color: #d3d3d3 ;
+}
+
+.vi-filter-bar td{
+  padding: 0px;
+  padding-right: 0.3em;
+}
+
+.vi-filter-bar .mono{
+  font-family: robotomono;
+  font-size: 10;
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  font-family: consolas;
+}
+
+.vi-filter button{
+  padding: 0px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: rgb(236, 236, 236);
+}
+
+.vi-filter-bar .collapse-toggle{
+  position: absolute;
+  right: 8px;
+  top: 6px;
+}
+.vi-filter-bar .collapse-toggle button{
+  font-size: 12;
+  background-color: #ffffff
+}
+
+.vi-filter-bar .form-group {
+  
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+.vi-filter-bar .form-check {
+  padding: 4px;
+}
+
+.vi-filter-bar .vi-search-filter .form-group {
+  margin:0;
+  padding:0;
+}
+
+
+.vi-filter-bar .vi-date-filter input{
+  padding:4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
